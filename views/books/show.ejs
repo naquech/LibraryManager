@@ -1,0 +1,42 @@
+<% include ../partials/header %>
+
+<link href="/css/show.css" rel="stylesheet">
+
+<div class="container">
+    
+    <h1>Book Info</h1> <br>
+
+    <div class="list-group-item list-group-item-action flex-column align-items-start">
+        <p>Title: <%=book.title%> </p>
+        <p>Author: <%=book.author%> </p>
+        <p>Format: <%=book.format%> </p>
+      
+            <a class="btn btn-info" href="/books/<%= book._id%>/edit">Edit</a>
+            <a class= "btn btn-outline-secondary" href="/books/">Back to Collection</a>
+        
+    </div>
+    
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title"> Notes / Comments </h5>
+        </div>
+        <div class="card-body">
+            <% book.comments.forEach(function(comment){ %>
+                <p> <strong> <%= comment.user %> </strong> : <%= comment.text %>  </p>
+            <% }) %> 
+        </div>
+        <div class="card-footer">
+            <a class="btn btn-success pull-right" href="/books/<%= book._id %>/comments/new" >Add a Comment</a>
+        </div>
+    </div>
+    
+    <div id="danger-zone">
+        <form action="/books/<%= book._id %>?_method=DELETE" method="POST">
+            <button class="btn btn-danger">DELETE</button>
+            <p>This action cannot be undone.</p>
+        </form>
+    </div>
+</div>
+
+
+<% include ../partials/footer %>

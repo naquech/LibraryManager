@@ -1,0 +1,23 @@
+h1{
+    text-align: center
+}
+
+.container{
+    width: 30%;
+    margin: 50px auto;
+}
+
+.list-group-item{
+    margin-bottom: 30px;
+}
+
+.card-footer{
+    text-align: center;
+    background-color: white;
+    border-top: 0;
+}
+
+#danger-zone{
+    margin-top: 100px;
+    text-align: center;
+}

@@ -1,0 +1,66 @@
+<% include ../partials/header %>
+
+<link href="/css/books.css" rel="stylesheet">
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+    <a class="navbar-brand" href="/">My Home Library</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mynavbar" aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+      
+    <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="/books"> My Books <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/books/add">New Book</a>
+            </li>
+        </ul>
+        
+        <ul class="navbar-nav navbar-right">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Log Out</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div class="container">
+    <div class="bookList">
+        <div class="container" id="listMenu">
+                <div class="row">
+                    <div class="col-sm">Title</div>
+                    <div class="col-sm">Author</div>
+                    <!--<div class="col-sm">Format</div>-->
+                    <!--<div class="col-sm">Comments</div>-->
+                </div>
+        </div>
+        
+        <% books.forEach(function(books){ %> 
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm"> 
+                        <a href="/books/<%= books._id %>"> <%= books.title %> </a>          <!-- id is provided by mongoose, inspect element -->
+                    </div>
+                    <div class="col-sm">
+                        <%= books.author %>
+                    </div>
+                    <!--<div class="col-sm">-->
+                    <!--    <%= books.format %>-->
+                    <!--</div>-->
+                    <!--<div class="col-sm">-->
+                    <!--    <%= books.comment %>-->
+                    <!--</div>-->
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+<% include ../partials/footer %>

@@ -1,0 +1,22 @@
+.container{
+    margin: 0 auto;
+    width: 80%;
+}
+
+.navbar{
+    background-color: white;
+}
+
+.bookList{
+    margin: 50px auto;
+}
+
+.row{
+    outline: 1px solid black;
+    padding: 10px;
+}
+
+#listMenu{
+    color:white;
+    background-color: black;
+}

@@ -1,0 +1,37 @@
+<% include ../partials/header%>
+
+<link href="/css/add.css" rel="stylesheet">
+
+<div class="container">
+    <h1>Add a new book</h1>
+    
+    <form action="/books" method="POST">
+        <div class="form-group">
+            <label>Title</label>
+            <input class="form-control" type="text" name="book[title]" placeholder="title">
+        </div>
+        <div class="form-group">
+            <label>Author</label>
+            <input class="form-control" type="text" name="book[author]" placeholder="author">
+        </div>
+        <div class="form-group">
+            <label>Format</label>
+            <select class="custom-select" name="book[format]">
+                <option value="Audio">Audiobook</option>
+                <option value="Kindle">Kindle</option>
+                <option value="Print">Print</option>
+            </select>
+        </div>
+        
+   <!--     <div class="form-group">
+            <label>Comments</label><br>
+            <textarea name="book[comment]" placeholder="Add any comments here..."></textarea> 
+        </div>
+    -->    
+        <button type="submit" class="btn btn-primary">Add to Collection</button>
+        <a class="btn btn-secondary" href="/books">Cancel</a>
+    </form>
+    
+</div>
+
+<% include ../partials/footer %>
